@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Biglietti Treno</title>
+        <link rel="shortcut icon" href="../img/1.jpg">
+        <script type="text/javascript" src="../java/costo.js">
+        </script>
+        <style>
+            body
+            {
+                font-family: 'Courier New', Courier, monospace;
+                background-color:grey;
+            }
+            .info
+            {
+                color: orange;
+                font-size: 20px;
+            }
+            .titolo
+            {
+                text-align: center;
+                background-color: coral;
+            }
+            .button
+            {
+                background-color: coral;
+                font-family: 'Courier New', Courier, monospace;
+                border: black;
+                border-style: solid;
+            }
+            .combo
+            {
+                height: 30px;
+                width: 50px;
+                background: coral;
+                border: black;
+                border-style: solid;
+            }
+            .text
+            {
+                font-family: 'Courier New', Courier, monospace; 
+                background: coral;
+                height: 30px;
+                width: 50px;
+                border: black;
+                border-style: solid;
+            }
+            .radio{
+                color: coral;
+            }
+            .ris{
+                color: coral;
+               font-size: 20px; 
+            }
+            #risultato{
+                border: black;
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+            <form>
+                <h2 class="titolo">Biglietto Treno</h2>
+                <label for="chil" class="info">Chilometri che si vogliono percorrere: 
+                </label><input type="text" id="chilometri" class="text">
+                <label for="chil" class="info">KM 
+                </label><br><br>
+                <label for="radio" class="info">Su che classe si vuole viaggiare: </label>
+                <p class="radio"><input type="radio" name="risp" id="r1">Prima Classe</p>
+                <p class="radio"><input type="radio" name="risp" id="r2">Seconda Classe</p>
+                <label for="persone" class="info">Numero di persone : </label>
+                <select name="combo" id="persone" class="combo">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+                <p><input type="button" value="Calcola" class="button" onclick="calcola()"></p>
+                <p><input type="reset" value="Annulla" class="button"></p>
+                <table>
+                    <th>
+                        <tr>
+                            <td class="ris">Risultato:</td>
+                            <td class="ris" id="risultato"></td>
+                        </tr>
+                    </th>
+                </table>
+            </form>
+    </body>
+</html>
