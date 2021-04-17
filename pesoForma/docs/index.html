@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Peso Forma</title>
+        <link rel="shortcut icon" href="../img/1.png">
+        <script type="text/javascript" src="../java/calcoli.js">
+        </script>
+        <style>
+            body
+            {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                position: relative;
+            }
+            p{
+                text-transform: uppercase;
+                margin-top: 0cm;
+                font-size: 25px;
+            }
+            input[type=button]
+            {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            input[type=number], select {
+                width: 40%;
+                padding: 10px;
+                margin: 10px 0;
+                display: inline-block;
+                border: 1px solid green;
+                border-radius: 4px;
+                font-size: 20px;
+            }
+            label{
+                font-size: 20px;
+            }
+            input[type=button] {
+                background-color: green;
+                color: white;
+                padding: 14px 20px;
+                border: none;
+                border-radius: 5px;
+                margin-top: 15px;
+                width: 100%;
+                font-size: 100%;
+            }
+
+            .uno {
+                position: absolute;
+                margin-top: 0cm;
+                text-align: left;
+                height: 380px;
+                width: 46%;
+                background-color: lightgray;
+                padding: 20px;
+            }
+            .due{
+                margin-right: 10px;
+                position: absolute;
+                margin-left: 49%;
+                text-align: left;
+                height: 380px;
+                width: 48.5%;
+                background-color: lightgray;
+                padding: 20px;
+            }
+            div{
+                border: solid green 2px;
+            }
+            table{
+                border-collapse: collapse;
+                margin-top: 20px;
+                width: 100%;
+                text-align: left;
+                font-size: 20px;
+            }
+            td{
+                padding: 8px;
+                border:solid green 2px;
+                height: 60px;
+                background-color: #f2f2f2;
+            }
+            #formu{
+                margin-top: 0px;
+                text-transform: uppercase;
+            }
+            td:hover{
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="uno">
+        <form>
+            <p>Calcolo peso forma</p>
+            <label for="alt">La tua altezza:</label>
+            <input type="number" id="alt" name="alt" placeholder="Altezza..."><label for="cm"> cm</label>
+            <br>
+            <label for="sesso">Sesso:</label>
+            <select id="sesso" name="Sesso">
+                <option value="Uomo">Uomo</option>
+                <option value="Donna">Donna</option>
+            </select>
+            <br>
+            <label for="eta">La tua età:</label>
+            <input type="number" id="eta" name="Eta" placeholder="Età..."><label for="anni"> anni</label>
+            <br>
+            <label for="peso">Il tuo peso:</label>
+            <input type="number" id="peso" name="Peso" placeholder="Peso..."><label for="kg"> kg</label>
+            <input type="button" value="Calcola" onclick="calcola()">
+        </div>
+        <div class="due">
+            <h2 id="formu">Formule (kg): </h2>
+            <table>
+                <tr>
+                    <td>Formula di Lorenza: </td>
+                    <td><p id = "uno"></p></td>
+                </tr>
+                <tr>
+                    <td>Formula di Broca: </td>
+                    <td><p id = "due"></p></td>
+                </tr>
+                <tr>
+                    <td>Formula di Wan der Vael: </td>
+                    <td><p id = "tre"></p></td>
+                </tr>
+                <tr>
+                    <td>BMI (body max index): </td>
+                    <td><p id = "quattro"></p></td>
+                </tr>
+            </table>
+        </div>
+        </form>
+    </body>
+</html>
