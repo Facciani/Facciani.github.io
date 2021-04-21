@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz</title>
+        <!--<link rel="shortcut icon" href="../img/1.jpg">-->
+        <script type="text/javascript" src="../java/quiz.js">
+        </script>
+        <style>
+            input[type=button], input[type=reset]
+            {
+                font-size: 20px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            input[type=number]
+            {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+            }
+            input[type=text]
+            {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+            }
+            body{
+                font-size: 20px;
+                /*width: 50%;*/
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            div{
+                border: 1px solid black;
+                padding-left: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            select{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 5px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+            <form>
+                <fieldset>
+                    <legend>Dati anagrafici</legend>
+                    <label for="cognome">Cognome: </label>
+                    <input type="text" id="cognome" onblur="verCognome()">
+                    <lebel for="nome">Nome: </lebel>
+                    <input type="text" id="nome" onblur="verNome()">
+                </fieldset>
+                <fieldset>
+                    <legend>Data di nascita</legend>
+                    <label for="giorno">Giorno: </label>
+                    <input type="number" id="giorno" onblur="verGiorno()">
+                    <label for="mese">Mese: </label>
+                    <select name="combo" id="mese">
+                        <option>Gen</option>
+                        <option>Feb</option>
+                        <option>Mar</option>
+                        <option>Apr</option>
+                        <option>Mag</option>
+                        <option>Giu</option>
+                        <option>Lug</option>
+                        <option>Ago</option>
+                        <option>Set</option>
+                        <option>Ott</option>
+                        <option>Nov</option>
+                        <option>sesso</option>
+                    </select>
+                    <label for="anno">Anno: </label>
+                    <input type="number" id="anno" onblur="verAnno()">
+                </fieldset>
+                <fieldset>
+                    <legend>Domande</legend>
+                    <label for="linguaggio">Qual è il linguaggio di programmazione utilizzato per creare e modificare i database? (maiuscolo)</label><br>
+                    <input type="text" id="linguaggio"><br><br>
+                    <label for="bool">Quanti valori può assumere una variabile booleana?</label><br>
+                    <select name="combo" id="bool">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>4</option>
+                        <option>256</option>
+                    </select><br><br><br><br>
+                    <label for="librerie">Qauli sono le librerire caricate in run-time?</label>
+                    <br><input type="radio" id="statica">
+                    <label for="static">Statiche</label><br>
+                    <input type="radio" id="dinamica">
+                    <label for="dinamic">Dinamiche</label><br><br>
+                    <label for="chiave">Quali sono le parole chiave in C++?</label><br>
+                    <input type="checkbox" id="void">
+                    <label for="void"> void</label><br>
+                    <input type="checkbox" id="integer">
+                    <label for="integer"> integer</label><br>
+                    <input type="checkbox" id="char">
+                    <label for="char"> char</label><br><br>
+                    <labe for="bit">8 bit corrispondono a un...</labe><br>
+                    <input type="number" id="bit">
+                </fieldset>
+                <br>
+                <input type="button" value="Elabora" onclick="elabora()">
+                <input type="reset" value="Cancella"><br><br>
+                <fieldset>
+                    <legend>Esito</legend>
+                    <label for="esito">Punteggio: </label>
+                    <input type="number" id="esito">
+                </fieldset>
+                <br>
+                <div>
+                    <label for="punt">Utente con punteggio: </label>
+                    <input type="text" id="punteggio" disabled>
+                </div>
+                <p id="ciao"></p>
+            </form>
+    </body>
+</html>
