@@ -2,26 +2,52 @@
 var nome="";
 var cognome="";
 var giorno="";
-var mese="";
 var anno="";
-var prom="";
-var bool="";
-var run="";
-var chiave="";
-var bit="";
+var cont=0;
 
 function elabora()
 {
-    alert(cognome+nome+giorno+document.getElementById("mese").value+anno)
+    var selectDaVerificare = document.getElementById("mese");
+    var indiceSelezionato = selectDaVerificare.selectedIndex;
+    var valoreSelezionato = selectDaVerificare.options[indiceSelezionato];
+    var valoreDentroLopzione = valoreSelezionato.value;
+    if(nome==""|| cognome==""|| giorno=="" || anno=="")
+    {
+        //alert("Dati anagrafici incompleti");
+    }else{
+        if(document.getElementById("linguaggio").value=="SQL" || document.getElementById("linguaggio").value=="Structured Query Language")
+        {
+            cont++;
+        }
+        if(document.getElementById("bool").selectedIndex==1)
+        {
+            cont++;
+        }
+        if(document.getElementById("dinamica").checked)
+        {
+            cont++;
+        }
+        if(document.getElementById("void").checked && document.getElementById("char").checked)
+        {
+            cont++;
+        }
+        if(document.getElementById("bit").value==1 || document.getElementById("bit").value=="1 byte")
+        {
+            cont++
+        }
+        document.getElementById("esito").value=cont;
+    }
+    var punteggio = cognome.substr(0,3) + nome.substr(0,3) + valoreDentroLopzione + anno.substr(0,2) + cont*10;
+    document.getElementById("punteggio").value=punteggio;
 }
 
 function verCognome()
 {
     var cogn="";
     cogn=document.getElementById("cognome").value;
-    if(cogn == "" || !isNaN(cogn))
+    if(cogn == "" || cogn.length < 3 || !isNaN(cogn))
     {
-        alert("Inserire un cognome valido");
+        alert("Inserire un cognome valido o lungo più di tre lettere");
         document.getElementById("cognome").value="";
     }else
     {
@@ -41,9 +67,9 @@ function verNome()
 {
     var nom="";
     nom=document.getElementById("nome").value;
-    if(nom == "" || !isNaN(nom))
+    if(nom == "" || nom.length < 3 || !isNaN(nom))
     {
-        alert("Inserire un nome valido");
+        alert("Inserire un nome valido o lungo più di tre lettere");
         document.getElementById("nome").value="";
     }else
     {
@@ -81,6 +107,7 @@ function verAnno()
         anno=ann;
     }
 }
+
 
 /*class Info {
     constructor() {
